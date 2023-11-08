@@ -32,4 +32,4 @@ EOF
 
 # Apply sysctl params without reboot
 sudo sysctl --system
-```S
+```

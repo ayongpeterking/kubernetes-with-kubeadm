@@ -33,6 +33,15 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 ```
+Verify that the br_netfilter, overlay modules are loaded
+```bash
+lsmod | grep br_netfilter
+lsmod | grep overlay
+```
+Verify that the net.bridge.bridge-nf-call-iptables, net.bridge.bridge-nf-call-ip6tables, and net.ipv4.ip_forward system variables are set to 1 in your sysctl
+```bash
+sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward
+```
 
 Step 2: Installing containerd
 Install containerd as per Docker's official guide:
